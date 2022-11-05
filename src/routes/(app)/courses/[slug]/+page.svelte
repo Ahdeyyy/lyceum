@@ -1,5 +1,6 @@
 <script>
 	import Question from '$lib/components/question.svelte';
+	import SubmitButton from '$lib/components/question/submitButton.svelte';
 
 	export let data;
 
@@ -36,34 +37,17 @@
 </script>
 
 <main>
-	<div class="text-2xl my-2 rounded shadow-md p-4">
-		<p>{data.course.name} : {data.course.code}</p>
+	<div class="text-2xl my-2 rounded p-4">
+		<p>Course: {data.course.name} : {data.course.code}</p>
 	</div>
 
-	<div class="mockup-window border border-base-300 shadow-lg">
+	<div class="shadow-lg">
 		{#each questions as qn }
 			<Question {qn} />
 		{/each}
 	</div>
 
-		<!-- The button to open modal -->
-		<label for="my-modal-3" class="btn btn-primary my-2 w-full ">Submit</label>
+	<SubmitButton func={submitQnA} />
 
-		<!-- Put this part before </body> tag -->
-		<input type="checkbox" id="my-modal-3" class="modal-toggle" />
-		<div class="modal">
-			<div class="modal-box relative">
-				<label for="my-modal-3" class="btn btn-primary btn-sm btn-circle absolute right-2 top-2"
-					>✕</label
-				>
-				<p class="py-4">Do you want to submit your answers?</p>
-				<div class="modal-action">
-					<button for="my-modal-3" class="btn btn-success my-2 mx-3" on:click={submitQnA}
-						>Yes</button
-					>
-				</div>
-			</div>
-		</div>
 </main>
 
-<!-- content here -->
