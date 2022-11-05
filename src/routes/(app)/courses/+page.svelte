@@ -3,11 +3,10 @@
     export let data;
 </script>
 
-<div class="grid grid-cols-2 place-content-center gap-4 h-48 ">
+<div class="flex flex-col">
     
     {#each data.courses.items as item}
-         <!-- content here -->
-         <a href="/courses/{item.slug}" class="text-xl mx-2 py-10 px-3 shadow-md rounded-md text-center " >
+         <a href="/courses/{item.slug}" class="text-xl mx-2 py-10 px-3 shadow-lg rounded-md" >
              {item.name} :
              {item.code}
          </a>
