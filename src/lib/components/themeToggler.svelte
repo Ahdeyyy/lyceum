@@ -1,11 +1,24 @@
-<label class="swap swap-rotate">
+<label class="swap swap-rotate mx-1.5 rounded my-2.5">
     <!-- this hidden checkbox controls the state -->
     
-    <input type="checkbox" data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" />
+    <input type="checkbox" on:click={
+        () => {
+            if (document.documentElement.getAttribute('data-theme') === 'night') {
+                document.documentElement.setAttribute('data-theme', 'winter');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'night');
+                localStorage.setItem('theme', 'night');
+            }
+        }
+    } 
+    data-toggle-theme="dark,light"
+    data-act-class="ACTIVECLASS"
+    />
 
     <!-- sun icon -->
     <svg
-        class="swap-on fill-current w-10 h-10"
+        class="swap-on fill-current w-6 h-6"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         ><path
@@ -15,7 +28,7 @@
 
     <!-- moon icon -->
     <svg
-        class="swap-off fill-current w-10 h-10"
+        class="swap-off fill-current w-6 h-6"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         ><path
