@@ -5,6 +5,7 @@
 <div class="card shadow-lg">
     <div class="card-body">
         <p class="my-2.5 mx-2" >
+            {qn.number}. &nbsp;
             {qn.body}
         </p>
         {#each qn.options as option}
