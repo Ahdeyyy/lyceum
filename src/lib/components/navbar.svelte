@@ -1,6 +1,6 @@
 <script>
 	export let data;
-    import Toggler from '$lib/components/themeToggler.svelte';
+	import Toggler from '$lib/components/themeToggler.svelte';
 </script>
 
 <div class="drawer">
@@ -24,32 +24,37 @@
 					>
 				</label>
 			</div>
+
 			<div class="flex-1 px-2 mx-2">Lyceum</div>
 			<div class="flex-none hidden lg:block">
 				<ul class="menu menu-horizontal">
-					<!-- Navbar menu content here -->
 					<li>
-						<a href="/" class="btn btn-ghost rounded mx-1 my-2.5">Home</a>
-						{#if data?.profile}
-							<p class="text-xl px-2">Welcome, {data.profile.name}</p>
+						<a href="/" class="rounded mx-1 my-2.5">Home</a>
+					</li>
+
+					<li>
+						{#if data?.profile?.is_staff}
+							<a class="rounded my-2.5 mx-1" href="/dashboard">Dashboard</a>
 						{/if}
 					</li>
+
 					<li>
 						{#if data?.profile}
-							<div>
-								<form action="/logout" method="post">
-									<button class="btn btn-primary text-primary-content rounded my-2.5" type="submit">
-										logout
-									</button>
-								</form>
-							</div>
+							<form action="/logout" method="post">
+								<button class="btn btn-primary text-primary-content rounded my-2.5  " type="submit">
+									logout
+								</button>
+							</form>
 						{:else}
-							<a href="/signup" class="btn btn-primary text-primary-content rounded my-2.5">signup</a>
+							<a href="/signup" class="btn btn-primary text-primary-content rounded my-2.5"
+								>signup</a
+							>
 						{/if}
 					</li>
-                    <li>
-                        <Toggler />
-                    </li>
+					
+					<li>
+						<Toggler />
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -61,24 +66,30 @@
 			<!-- Sidebar content here -->
 			<li>
 				<a href="/" class="btn btn-ghost rounded my-2">Home</a>
-				{#if data?.profile}
-					<p class="text-xl px-2">Welcome, {data.profile.name}</p>
+			</li>
+			<li>
+				{#if data?.profile?.is_staff}
+					<a class="btn btn-ghost rounded my-2" href="/dashboard">dashboard</a>
 				{/if}
 			</li>
 			<li>
 				{#if data?.profile}
-					<div>
-						<form action="/logout" method="post">
-							<button class="btn btn-primary text-primary-content rounded" type="submit">logout</button>
-						</form>
-					</div>
+					<form action="/logout" method="post">
+						<button
+							class="btn btn-primary text-primary-content rounded mx-auto w-full"
+							type="submit">logout</button
+						>
+					</form>
 				{:else}
 					<a href="/signup" class="btn btn-primary text-primary-content rounded">signup</a>
 				{/if}
 			</li>
-            <li>
-                <Toggler />
-            </li>
+			
+			<li>
+				<Toggler />
+			</li>
+
+
 		</ul>
 	</div>
 </div>
