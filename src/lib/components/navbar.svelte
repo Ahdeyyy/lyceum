@@ -39,6 +39,10 @@
 					</li>
 
 					<li>
+						<a class="rounded my-2.5 mx-1" href="/courses">Courses</a>
+					</li>
+
+					<li>
 						{#if data?.profile}
 							<form action="/logout" method="post">
 								<button class="btn btn-primary text-primary-content rounded my-2.5  " type="submit">
@@ -72,6 +76,11 @@
 					<a class="btn btn-ghost rounded my-2" href="/dashboard">dashboard</a>
 				{/if}
 			</li>
+
+			<li>
+				<a class="btn btn-ghost rounded my-2" href="/courses">courses</a>
+			</li>
+			
 			<li>
 				{#if data?.profile}
 					<form action="/logout" method="post">
