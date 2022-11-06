@@ -3,10 +3,10 @@ import { redirect } from '@sveltejs/kit';
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ locals }) {
     if (!locals.user) {
-        return redirect('/login');
+        throw redirect(303,'/login');
     }
-    if(!locals.user.is_staff) {
-        return redirect('/');
+    if(!locals.user.profile.is_staff) {
+        throw redirect(303,'/courses');
     }
 };
 
