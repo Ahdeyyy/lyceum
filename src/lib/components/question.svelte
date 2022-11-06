@@ -2,7 +2,7 @@
 	export let qn;
 </script>
 
-<div class="card shadow-lg">
+<div>
     <div class="card-body">
         <p class="my-2.5 mx-2" >
             {qn.number}. &nbsp;

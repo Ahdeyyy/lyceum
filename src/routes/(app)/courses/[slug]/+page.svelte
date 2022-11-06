@@ -38,12 +38,13 @@
 
 <main>
 	<div class="text-2xl my-2 rounded p-4">
-		<p>Course: {data.course.name} : {data.course.code}</p>
+		<p>Course: {data.course.name} | {data.course.code}</p>
 	</div>
 
 	<div class="shadow-lg">
 		{#each questions as qn }
 			<Question {qn} />
+			<div class="divider"></div>
 		{/each}
 	</div>
 
