@@ -1,5 +1,8 @@
 <script>
+    import Alert from "$lib/components/formAlert.svelte";
 
+    export let form;
+    
 </script>
 
 
@@ -13,7 +16,7 @@
                         Email
                     </span>
                 </label>
-                <input class="input input-bordered w-full max-w-xs" type="email" name="email" id="">
+                <input class="input input-bordered w-full max-w-xs" type="email" name="email" id="email">
             </div>
             <div class="form-control">
                 <label class="label " for="password">
@@ -21,7 +24,12 @@
                         Password
                     </span>
                 </label>
-                <input class="input input-bordered w-full max-w-xs" type="password" name="password" id="">
+                <input class="input input-bordered w-full max-w-xs" type="password" name="password" id="password">
+
+                {#if form?.error}
+                    <Alert type="error" />
+                {/if}
+
             </div>
 
             <div class="card-actions">
