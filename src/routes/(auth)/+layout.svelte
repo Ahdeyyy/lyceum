@@ -1,9 +1,11 @@
 <script>
 	import '$lib/global.css';
 	import Navbar from '$lib/components/navbar.svelte';
+
+	export let data;
 </script>
 
-<Navbar>
+<Navbar {data} >
 	<section class="flex justify-center my-3" >
 		<slot />
 	</section>
