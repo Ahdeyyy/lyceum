@@ -1,5 +1,5 @@
 <script>
-	import Question from '$lib/components/question.svelte';
+	import QuestionList from '$lib/components/question/questionList.svelte';
 	import SubmitButton from '$lib/components/question/submitButton.svelte';
 
 	export let data;
@@ -41,14 +41,22 @@
 		<p>Course: {data.course.name} | {data.course.code}</p>
 	</div>
 
-	<div class="shadow-lg">
-		{#each questions as qn }
-			<Question {qn} />
-			<div class="divider"></div>
-		{/each}
-	</div>
+	{#if !submitted}
+		<QuestionList {questions} {submitted} />
 
-	<SubmitButton func={submitQnA} />
+		{#if questions.length > 0}
+			<SubmitButton func={submitQnA} />
+		{:else}
+			<div class="text-center text-2xl my-2 rounded p-4">
+				<p>There are no questions available for this course</p>
+			</div>
+		{/if}
+	{:else}
+		<div class="text-center text-2xl my-2 rounded p-4">
+			<p>Answers</p>
+		</div>
 
+		<QuestionList {questions} {submitted} />
+		<button class="btn btn-primary w-full" onclick="location.reload()"> Restart </button>
+	{/if}
 </main>
-
