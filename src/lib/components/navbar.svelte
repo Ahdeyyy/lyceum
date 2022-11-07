@@ -32,11 +32,11 @@
 						<a href="/" class="rounded mx-1 my-2.5">Home</a>
 					</li>
 
-					<li>
-						{#if data?.profile?.is_staff}
+					{#if data?.profile?.is_staff}
+						<li>
 							<a class="rounded my-2.5 mx-1" href="/dashboard">Dashboard</a>
-						{/if}
-					</li>
+						</li>
+					{/if}
 
 					<li>
 						<a class="rounded my-2.5 mx-1" href="/courses">Courses</a>
@@ -55,7 +55,7 @@
 							>
 						{/if}
 					</li>
-					
+
 					<li>
 						<Toggler />
 					</li>
@@ -71,16 +71,16 @@
 			<li>
 				<a href="/" class="btn btn-ghost rounded my-2">Home</a>
 			</li>
-			<li>
-				{#if data?.profile?.is_staff}
+			{#if data?.profile?.is_staff}
+				<li>
 					<a class="btn btn-ghost rounded my-2" href="/dashboard">dashboard</a>
-				{/if}
-			</li>
+				</li>
+			{/if}
 
 			<li>
 				<a class="btn btn-ghost rounded my-2" href="/courses">courses</a>
 			</li>
-			
+
 			<li>
 				{#if data?.profile}
 					<form action="/logout" method="post">
@@ -93,12 +93,10 @@
 					<a href="/signup" class="btn btn-primary text-primary-content rounded">signup</a>
 				{/if}
 			</li>
-			
+
 			<li>
 				<Toggler />
 			</li>
-
-
 		</ul>
 	</div>
 </div>
