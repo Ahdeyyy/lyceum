@@ -2,7 +2,7 @@
     export let func;
 </script>
 
-<label for="my-modal-3" class="btn btn-primary my-2 w-full ">Submit</label>
+<label for="my-modal-3" class="btn btn-primary my-2 w-11/12 mx-4">Submit</label>
 
 <input type="checkbox" id="my-modal-3" class="modal-toggle" />
 <div class="modal">
