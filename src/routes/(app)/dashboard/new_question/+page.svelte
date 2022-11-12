@@ -26,10 +26,10 @@
 	function addQandOpt(e) {
 		e.preventDefault();
 		let { question, opts } = parseStringToQuestion(document.getElementById('string').value);
+		console.log(question, opts);
 		document.getElementById('body').value = question;
 		options = [];
 		options = [...opts];
-		document.getElementById('body').value = '';
 	}
 
 	// export options to the server
