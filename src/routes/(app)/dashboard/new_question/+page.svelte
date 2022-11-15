@@ -17,7 +17,6 @@
 	}
 
 	function deleteOption(e, index) {
-		console.log(e, index);
 		e.preventDefault();
 		options.splice(index, 1);
 		options = [...options];
@@ -26,12 +25,10 @@
 	function addQandOpt(e) {
 		e.preventDefault();
 		let { question, opts } = parseStringToQuestion(document.getElementById('string').value);
-		console.log(question, opts);
 		document.getElementById('body').value = question;
 		options = [];
 		options = [...opts];
 	}
-
 	// export options to the server
 	function submit(e) {
 		e.preventDefault();

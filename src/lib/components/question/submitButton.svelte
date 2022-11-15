@@ -1,5 +1,5 @@
 <script>
-    export let func;
+	export let func;
 </script>
 
 <label for="my-modal-3" class="btn btn-primary my-2 w-11/12 mx-4">Submit</label>

@@ -1,11 +1,14 @@
 <script>
 	import QuestionList from '$lib/components/question/questionList.svelte';
 	import SubmitButton from '$lib/components/question/submitButton.svelte';
+	import ResultNotify from '$lib/components/resultNotify.svelte';
 
 	export let data;
 
 	let submitted = false;
 	let incorrect = [];
+	let correct = [];
+	$: if (submitted) document.getElementById('result').scrollIntoView();
 
 	function submitQnA() {
 		questions.forEach((question) => {
@@ -15,7 +18,7 @@
 				question.correct = false;
 			}
 		});
-		let correct = questions.filter((q) => q.answer === q.selected);
+		correct = questions.filter((q) => q.answer === q.selected);
 		incorrect = questions.filter((q) => q.answer !== q.selected);
 
 		let score = correct.length / questions.length;
@@ -38,8 +41,10 @@
 
 <main>
 	<div class="text-2xl my-2 rounded p-4">
-		<p>Course: {data.course.name} | {data.course.code}</p>
+		<p>Course : {data.course.name} | {data.course.code}</p>
 	</div>
+
+	<div id="result" />
 
 	{#if !submitted}
 		<QuestionList {questions} {submitted} />
@@ -52,6 +57,10 @@
 			</div>
 		{/if}
 	{:else}
+		<div id="result">
+			<ResultNotify incorrect={incorrect.length} correct={correct.length} />
+		</div>
+
 		<div class="text-center text-2xl my-2 rounded p-4">
 			<p>Answers</p>
 		</div>
