@@ -8,6 +8,7 @@
 		<a
 			href="/courses/{item.slug}"
 			class="text-xl mx-2 py-10 px-3 shadow-lg rounded-md hover:scale-105"
+			sveltekit:prefetch
 		>
 			{item.name} :
 			{item.code}

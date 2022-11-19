@@ -1,6 +1,6 @@
 <script>
-	import Question from '$lib/components/question.svelte';
-	import AnsQuestion from '$lib/components/question/answeredQuestion.svelte';
+	import Question from '$lib/components/question/unanswered.svelte';
+	import AnsQuestion from '$lib/components/question/answered.svelte';
 	export let questions;
 	export let submitted;
 </script>

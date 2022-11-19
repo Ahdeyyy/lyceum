@@ -1,7 +1,5 @@
 <script>
-	import QuestionList from '$lib/components/question/questionList.svelte';
-	import SubmitButton from '$lib/components/question/submitButton.svelte';
-	import ResultNotify from '$lib/components/resultNotify.svelte';
+	import { QuestionList, SubmitQuestions, ResultNotification } from '$lib/components/';
 
 	export let data;
 
@@ -50,7 +48,7 @@
 		<QuestionList {questions} {submitted} />
 
 		{#if questions.length > 0}
-			<SubmitButton func={submitQnA} />
+			<SubmitQuestions func={submitQnA} />
 		{:else}
 			<div class="text-center text-2xl my-2 rounded p-4">
 				<p>There are no questions available for this course</p>
@@ -58,7 +56,7 @@
 		{/if}
 	{:else}
 		<div id="result">
-			<ResultNotify incorrect={incorrect.length} correct={correct.length} />
+			<ResultNotification incorrect={incorrect.length} correct={correct.length} />
 		</div>
 
 		<div class="text-center text-2xl my-2 rounded p-4">
