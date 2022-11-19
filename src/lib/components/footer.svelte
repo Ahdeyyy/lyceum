@@ -1,6 +1,6 @@
-<footer class="footer bg-neutral text-neutral-content">
+<footer class="footer my-4">
 	<div>
-		<span class="footer-title"> Socials </span>
+		<span class="footer-title">Footer </span>
 	</div>
 	<div />
 </footer>
