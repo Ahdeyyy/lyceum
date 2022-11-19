@@ -6,7 +6,7 @@
 </script>
 
 <Navbar {data}>
-	<section class="">
+	<section class="bg-base-200">
 		<slot />
 	</section>
 </Navbar>

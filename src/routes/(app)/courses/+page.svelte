@@ -3,15 +3,16 @@
 	export let data;
 </script>
 
-<div class="grid md:grid-cols-3 auto-cols-max auto-rows-max ">
+<main class="flex flex-col m-8">
+	<h1 class="text-4xl font-bold text-center uppercase my-4">Courses</h1>
 	{#each data.courses.items as item}
 		<a
 			href="/courses/{item.slug}"
-			class="text-xl mx-2 py-10 px-3 shadow-lg rounded-md hover:scale-105"
+			class="text-xl m-2 uppercase py-10 shadow-lg text-center bg-base-100 rounded-md hover:scale-105 hover:shadow-2xl transition duration-500 ease-in-out"
 			sveltekit:prefetch
 		>
 			{item.name} :
 			{item.code}
 		</a>
 	{/each}
-</div>
+</main>

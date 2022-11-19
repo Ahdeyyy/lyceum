@@ -1,4 +1,4 @@
-<footer class="footer my-4">
+<footer class="footer">
 	<div>
 		<span class="footer-title">Footer </span>
 	</div>
