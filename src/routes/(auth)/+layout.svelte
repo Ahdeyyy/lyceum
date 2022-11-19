@@ -9,5 +9,4 @@
 	<section class="flex justify-center my-3">
 		<slot />
 	</section>
-	<Footer />
 </Navbar>

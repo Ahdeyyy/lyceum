@@ -1,6 +1,7 @@
 <script>
 	export let data;
 	import Toggler from '$lib/components/themeToggler.svelte';
+	import Footer from './footer.svelte';
 </script>
 
 <div class="drawer">
@@ -100,3 +101,4 @@
 		</ul>
 	</div>
 </div>
+<Footer />
