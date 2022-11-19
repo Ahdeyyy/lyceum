@@ -1,57 +1,46 @@
 <script>
-
+	import { FormInput } from '$lib/components/';
 </script>
 
-<main class="flex justify-center" >
-    <form class="card w-96 bg-base-100 shadow-xl" action="?/register" method="post">
-        <div class="card-body">
-            <h2 class="card-title">Sign up</h2>
-            <div class="form-control">
-                <label class="label " for="name">
-                    <span class="label-text" >
-                        Name
-                    </span>
-                </label>
-                <input class="input input-bordered w-full max-w-xs" type="text" name="name" id="">
+<main class="flex justify-center">
+	<form class="card w-96 bg-base-100 shadow-xl" action="?/register" method="post">
+		<div class="card-body">
+			<h2 class="card-title">Sign up</h2>
 
-            </div>
-            <div class="form-control">
-                <label class="label " for="email">
-                    <span class="label-text" >
-                        Email
-                    </span>
-                </label>
-                <input class="input input-bordered w-full max-w-xs" type="email" name="email" id="">
-            </div>
-            <div class="form-control">
-                <label class="label " for="password">
-                    <span class="label-text" >
-                        Password
-                    </span>
-                </label>
-                <input class="input input-bordered w-full max-w-xs" type="password" name="password" id="">
-            </div>
+			<FormInput name="name" label="Name" type="text" id="name" placeholder="john doe" required />
+			<FormInput
+				name="email"
+				label="Email"
+				type="email"
+				id="email"
+				placeholder="example@mail.com"
+				required
+			/>
+			<FormInput
+				name="password"
+				label="Password"
+				type="password"
+				id="password"
+				placeholder="Password"
+				required
+			/>
 
-            <div class="form-control">
-                <label class="label " for="passwordConfirm">
-                    <span class="label-text" >
-                        Confirm password
-                    </span>
-                </label>
-                <input class="input input-bordered w-full max-w-xs" type="password" name="passwordConfirm" id="">
-            </div>
+			<FormInput
+				name="passwordConfirm"
+				label="Confirm Password"
+				type="password"
+				id="passwordConfirm"
+				placeholder="Confirm Password"
+				required
+			/>
 
-            <p>
-               Already have an account? <a href="/login" class="link text-primary ">login</a>
-            </p>
+			<p>
+				Already have an account? <a href="/login" class="link link-hover text-primary ">login</a>
+			</p>
 
-            <div class="card-actions">
-                <button class="btn btn-primary" type="submit">Sign up</button>
-            </div>
-
-
-
-
-        </div>
-    </form>
+			<div class="card-actions my-1">
+				<button class="btn btn-primary w-full" type="submit">Sign up</button>
+			</div>
+		</div>
+	</form>
 </main>

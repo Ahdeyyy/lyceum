@@ -6,6 +6,7 @@ import Question from './question/unanswered.svelte';
 import QuestionList from './question/list.svelte';
 import SubmitQuestions from './question/submitButton.svelte';
 import FormAlert from './form/alert.svelte';
+import FormInput from './form/input.svelte';
 
 export {
 	Footer,
@@ -15,5 +16,6 @@ export {
 	Question,
 	QuestionList,
 	SubmitQuestions,
-	FormAlert
+	FormAlert,
+	FormInput
 };
