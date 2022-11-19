@@ -1,10 +1,7 @@
-import PocketBase from 'pocketbase';
-
-const client = new PocketBase('https://lag-pq.fly.dev');
-
 /** @type {import('./$types').PageLoad} */
-export async function load({ params }) {
+export async function load({ locals, params }) {
 	// course based on slug
+	const client = locals.pb;
 	const course = await client.records.getList('courses', 1, 1, {
 		filter: `slug = "${params.slug}"`
 	});
@@ -27,8 +24,8 @@ export async function load({ params }) {
 		}
 
 		return {
-			questions: resultList,
-			course: course.items[0]
+			questions: structuredClone(resultList),
+			course: structuredClone(course.items[0])
 		};
 	}
 }

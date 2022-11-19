@@ -1,6 +1,6 @@
 <script>
 	import '$lib/global.css';
-	import { Navbar, Footer } from '$lib/components/';
+	import { Navbar } from '$lib/components/';
 
 	export let data;
 </script>

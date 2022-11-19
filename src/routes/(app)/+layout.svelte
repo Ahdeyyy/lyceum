@@ -1,5 +1,5 @@
 <script>
-	import { Navbar, Footer } from '$lib/components/';
+	import { Navbar } from '$lib/components/';
 	import '$lib/global.css';
 
 	export let data;
