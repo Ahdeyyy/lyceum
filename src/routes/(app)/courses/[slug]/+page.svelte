@@ -37,8 +37,8 @@
 	});
 </script>
 
-<main>
-	<div class="text-2xl my-2 rounded p-4">
+<main class="bg-base-300 m-5">
+	<div class="text-2xl my-2 rounded p-4 text-center uppercase font-bold">
 		<p>Course : {data.course.name} | {data.course.code}</p>
 	</div>
 
@@ -55,7 +55,7 @@
 			</div>
 		{/if}
 	{:else}
-		<div id="result">
+		<div id="result" class="flex justify-center">
 			<ResultNotification incorrect={incorrect.length} correct={correct.length} />
 		</div>
 

@@ -3,7 +3,7 @@
 	let correct = qn.selected === qn.answer;
 </script>
 
-<div>
+<div class="bg-base-100 mx-5">
 	<div class="card-body">
 		<p class="my-2.5 mx-2">
 			{qn.number}. &nbsp;

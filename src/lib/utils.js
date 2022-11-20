@@ -4,8 +4,8 @@ const mapOpt = (e) => {
 export const parseStringToQuestion = (str) => {
 	const optionChars = ['A.', 'B.', 'C.', 'D.', 'E.'];
 	let arr = str.split('##');
-	let question = arr[0];
-	let options = arr[1].split(' ');
+	let question = arr[0].trim();
+	let options = arr[1].trim().split(' ');
 
 	let opts = new Array();
 

@@ -4,10 +4,10 @@
 	export let form;
 </script>
 
-<main class="flex justify-center">
+<main class="flex justify-center m-10">
 	<form class="card w-96 bg-base-100 shadow-xl" action="?/login" method="post">
 		<div class="card-body">
-			<h2 class="card-title">Login</h2>
+			<h2 class="card-title justify-center">Login</h2>
 
 			<FormInput
 				type="email"

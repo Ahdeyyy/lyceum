@@ -1,8 +1,10 @@
 <script>
-	import { FormInput } from '$lib/components/';
+	import { FormInput, FormAlert } from '$lib/components/';
+
+	export let form;
 </script>
 
-<main class="flex justify-center my-8">
+<main class="flex justify-center my-12">
 	<form class="card w-96 bg-base-100 shadow-xl" action="?/register" method="post">
 		<div class="card-body">
 			<h2 class="card-title justify-center">Create your account</h2>
@@ -44,6 +46,10 @@
 			<p>
 				Already have an account? <a href="/login" class="link link-hover text-primary ">login</a>
 			</p>
+
+			{#if form?.error}
+				<FormAlert type="error" message={form.message} />
+			{/if}
 
 			<div class="card-actions my-1">
 				<button class="btn btn-primary w-full" type="submit">Sign up</button>
