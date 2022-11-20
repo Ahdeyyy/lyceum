@@ -6,7 +6,10 @@
 	let submitted = false;
 	let incorrect = [];
 	let correct = [];
-	$: if (submitted) document.getElementById('result').scrollIntoView();
+	$: if (submitted)
+		document
+			.getElementById('course-name')
+			.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
 
 	function submitQnA() {
 		questions.forEach((question) => {
@@ -38,11 +41,9 @@
 </script>
 
 <main class="bg-base-300 m-5">
-	<div class="text-2xl my-2 rounded p-4 text-center uppercase font-bold">
-		<p>Course : {data.course.name} | {data.course.code}</p>
+	<div id="course-name" class="text-2xl my-2 rounded p-4 text-center uppercase font-bold">
+		<p>{data.course.name} | {data.course.code}</p>
 	</div>
-
-	<div id="result" />
 
 	{#if !submitted}
 		<QuestionList {questions} {submitted} />
