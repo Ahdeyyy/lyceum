@@ -9,7 +9,6 @@
 		<a
 			href="/courses/{item.slug}"
 			class="text-xl m-2 uppercase py-10 shadow-lg text-center bg-base-100 rounded-md hover:scale-105 hover:shadow-2xl transition duration-500 ease-in-out"
-			sveltekit:prefetch
 		>
 			{item.name} |
 			{item.code}
