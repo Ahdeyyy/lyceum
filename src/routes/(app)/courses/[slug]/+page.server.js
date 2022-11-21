@@ -7,11 +7,11 @@ export async function load({ locals, params }) {
 	});
 	if (course.items[0] !== undefined) {
 		// filter questions by course
-		let resultList = await client.records.getFullList('questions', 500, {
+		let resultList = await client.records.getList('questions', 1, 500, {
 			filter: `course = "${course.items[0].id}"`
 		});
 		// randomize questions and limit to 50
-		resultList.items = resultList.sort(() => Math.random() - 0.5).slice(0, 20);
+		resultList.items = resultList.items.sort(() => Math.random() - 0.5).slice(0, 20);
 		// loop throught the result list and then get the options for each question
 		for (let i = 0; i < resultList.items.length; i++) {
 			const options = await client.records.getList('options', 1, 5, {
@@ -19,6 +19,14 @@ export async function load({ locals, params }) {
 			});
 			resultList.items[i].options = options.items;
 		}
+
+		//randomize the options
+		for (let i = 0; i < resultList.items.length; i++) {
+			resultList.items[i].options = resultList.items[i].options.sort(() => Math.random() - 0.5);
+		}
+
+		console.log(resultList.items.length);
+
 		return {
 			questions: structuredClone(resultList),
 			course: structuredClone(course.items[0])

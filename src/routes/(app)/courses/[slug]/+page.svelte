@@ -12,6 +12,7 @@
 			.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
 
 	function submitQnA() {
+		console.log('submitting');
 		questions.forEach((question) => {
 			if (question.answer === question.selected) {
 				question.correct = true;
@@ -27,7 +28,7 @@
 		document.getElementById('my-modal-3').click();
 	}
 
-	let questions = data.questions.items.map((q, index) => {
+	var questions = data.questions.items.map((q, index) => {
 		return {
 			number: index + 1,
 			id: q.id,
