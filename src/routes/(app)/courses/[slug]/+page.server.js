@@ -25,8 +25,6 @@ export async function load({ locals, params }) {
 			resultList.items[i].options = resultList.items[i].options.sort(() => Math.random() - 0.5);
 		}
 
-		console.log(resultList.items.length);
-
 		return {
 			questions: structuredClone(resultList),
 			course: structuredClone(course.items[0])
