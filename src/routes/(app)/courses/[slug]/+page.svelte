@@ -1,5 +1,6 @@
 <script>
 	import { QuestionList, SubmitQuestions, ResultNotification } from '$lib/components/';
+	import katex from 'katex';
 
 	export let data;
 
@@ -28,6 +29,15 @@
 	}
 
 	var questions = data.questions.items.map((q, index) => {
+		if (q.body[0] === '$' && q.body[q.body.length - 1] === '$') {
+			// trim the $ signs
+			q.body = q.body.slice(1, q.body.length - 1);
+			q.body = katex.renderToString(q.body);
+		} else if (q.body[0] === '\\') {
+			// trim the // sign
+			q.body = q.body.slice(1, q.body.length);
+			q.body = katex.renderToString(q.body);
+		}
 		return {
 			number: index + 1,
 			id: q.id,

@@ -12,6 +12,5 @@
 		{:else}
 			<Question {qn} />
 		{/if}
-		<div class="divider" />
 	{/each}
 </div>

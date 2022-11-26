@@ -30,12 +30,12 @@
 			<div class="flex-none hidden lg:block">
 				<ul class="menu menu-horizontal">
 					<li>
-						<a href="/" class="rounded mx-1 my-2.5">Home</a>
+						<a href="/" class="rounded mx-1 my-2.5" data-sveltekit-prefetch>Home</a>
 					</li>
 
 					{#if data?.profile?.is_staff}
 						<li>
-							<a class="rounded my-2.5 mx-1" href="/dashboard">Dashboard</a>
+							<a class="rounded my-2.5 mx-1" href="/dashboard" data-sveltekit-prefetch>Dashboard</a>
 						</li>
 					{/if}
 
@@ -51,8 +51,10 @@
 								</button>
 							</form>
 						{:else}
-							<a href="/signup" class="btn btn-primary text-primary-content rounded my-2.5"
-								>signup</a
+							<a
+								href="/signup"
+								class="btn btn-primary text-primary-content rounded my-2.5"
+								data-sveltekit-prefetch>signup</a
 							>
 						{/if}
 					</li>
@@ -71,16 +73,18 @@
 		<ul class="menu p-4 w-80 bg-base-100">
 			<!-- Sidebar content here -->
 			<li>
-				<a href="/" class="btn btn-ghost rounded my-2">Home</a>
+				<a href="/" class="btn btn-ghost rounded my-2" data-sveltekit-prefetch>Home</a>
 			</li>
 			{#if data?.profile?.is_staff}
 				<li>
-					<a class="btn btn-ghost rounded my-2" href="/dashboard">dashboard</a>
+					<a class="btn btn-ghost rounded my-2" href="/dashboard" data-sveltekit-prefetch
+						>dashboard</a
+					>
 				</li>
 			{/if}
 
 			<li>
-				<a class="btn btn-ghost rounded my-2" href="/courses">courses</a>
+				<a class="btn btn-ghost rounded my-2" href="/courses" data-sveltekit-prefetch>courses</a>
 			</li>
 
 			<li>

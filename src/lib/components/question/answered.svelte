@@ -3,11 +3,11 @@
 	let correct = qn.selected === qn.answer;
 </script>
 
-<div class="bg-base-100 mx-5">
+<div class="bg-base-100 mx-5 my-5 shadow-md rounded">
 	<div class="card-body">
 		<p class="my-2.5 mx-2">
 			{qn.number}. &nbsp;
-			{qn.body}
+			{@html qn.body}
 		</p>
 		{#each qn.options as item}
 			{#if item.char == qn.answer}

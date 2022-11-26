@@ -2,11 +2,11 @@
 	export let qn;
 </script>
 
-<div class="mx-5 rounded">
+<div class="mx-5 rounded my-5 shadow-md">
 	<div class="card-body bg-base-100">
 		<p class="my-2.5 mx-2 font-semibold">
 			{qn.number}. &nbsp;
-			{qn.body}
+			{@html qn.body}
 		</p>
 		{#each qn.options as option}
 			<div

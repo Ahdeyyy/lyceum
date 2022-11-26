@@ -1,6 +1,8 @@
 <script>
 	/** @type {import('./$types').PageData} */
 	export let data;
+	export let form;
+	console.log(form?.searchResult);
 </script>
 
 <main class="flex flex-col m-8">
@@ -9,7 +11,7 @@
 		<a
 			href="/courses/{item.slug}"
 			class="text-xl m-2 uppercase py-10 shadow-lg text-center bg-base-100 rounded-md hover:scale-105 hover:shadow-2xl transition duration-500 ease-in-out"
-			sveltekit:prefetch
+			data-sveltekit-prefetch
 		>
 			{item.name} |
 			{item.code}

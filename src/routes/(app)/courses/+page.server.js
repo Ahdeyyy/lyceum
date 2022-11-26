@@ -9,3 +9,19 @@ export async function load({ locals }) {
 		courses: structuredClone(courses)
 	};
 }
+
+export const actions = {
+	search: async ({ locals, request }) => {
+		const formData = await request.formData();
+		const data = Object.fromEntries([...formData]);
+
+		// filter by name and code
+		const courses = await locals.pb.records.getList('courses', 1, 100, {
+			filter: `name ~"${data.search}" || code ~"${data.search}"`
+		});
+
+		return {
+			searchResult: structuredClone(courses)
+		};
+	}
+};
