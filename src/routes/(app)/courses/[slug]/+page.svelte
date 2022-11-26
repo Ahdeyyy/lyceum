@@ -12,7 +12,6 @@
 			.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
 
 	function submitQnA() {
-		console.log('submitting');
 		questions.forEach((question) => {
 			if (question.answer === question.selected) {
 				question.correct = true;
