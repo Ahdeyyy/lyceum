@@ -38,6 +38,19 @@
 			q.body = q.body.slice(1, q.body.length);
 			q.body = katex.renderToString(q.body);
 		}
+
+		q.options = q.options.map((o) => {
+			if (o[0] === '$' && o[o.length - 1] === '$') {
+				// trim the $ signs
+				o = o.slice(1, o.length - 1);
+				o = katex.renderToString(o);
+			} else if (o[0] === '\\') {
+				// trim the // sign
+				o = o.slice(1, o.length);
+				o = katex.renderToString(o);
+			}
+			return o;
+		});
 		return {
 			number: index + 1,
 			id: q.id,
