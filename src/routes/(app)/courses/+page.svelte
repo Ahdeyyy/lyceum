@@ -5,6 +5,10 @@
 	console.log(form?.searchResult);
 </script>
 
+<svelte:head>
+	<title>Courses</title>
+</svelte:head>
+
 <main class="flex flex-col m-8">
 	<h1 class="text-4xl font-bold text-center uppercase my-4">Courses</h1>
 	{#each data.courses.items as item}

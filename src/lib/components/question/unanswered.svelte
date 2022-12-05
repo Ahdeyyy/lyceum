@@ -20,7 +20,7 @@
 	{/each}
 
 	<button
-		class="btn btn-ghost my-1"
+		class="btn btn-secondary my-1"
 		on:click={() => {
 			qn.selected = null;
 		}}

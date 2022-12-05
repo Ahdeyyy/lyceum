@@ -63,6 +63,12 @@
 	});
 </script>
 
+<svelte:head>
+	<title>
+		{data.course.name} | {data.course.code}
+	</title>
+</svelte:head>
+
 <main class="bg-base-300 m-5">
 	<div id="course-name" class="text-2xl my-2 rounded p-4 text-center uppercase font-bold">
 		<p>{data.course.name} | {data.course.code}</p>

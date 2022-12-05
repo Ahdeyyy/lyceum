@@ -11,10 +11,10 @@ export async function load({ locals, params }) {
 			filter: `course = "${course.items[0].id}"`
 		});
 		// randomize questions and limit to 50
-		resultList.items = resultList.items.sort(() => Math.random() - 0.5).slice(0, 20);
+		resultList.items = resultList.items.sort(() => Math.random() - 0.5).slice(0, 60);
 		// loop throught the result list and then get the options for each question
 		for (let i = 0; i < resultList.items.length; i++) {
-			const options = await client.records.getList('options', 1, 5, {
+			const options = await client.records.getList('options', 1, 6, {
 				filter: `question = "${resultList.items[i].id}"`
 			});
 			resultList.items[i].options = options.items;

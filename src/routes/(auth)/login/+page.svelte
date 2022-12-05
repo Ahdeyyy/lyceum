@@ -4,6 +4,10 @@
 	export let form;
 </script>
 
+<svelte:head>
+	<title>Login</title>
+</svelte:head>
+
 <main class="flex justify-center m-10">
 	<form class="card w-96 bg-base-100 shadow-xl" action="?/login" method="post">
 		<div class="card-body">
